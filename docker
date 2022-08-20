@@ -1,0 +1,3 @@
+docker build -t insure_predict .
+
+docker run -dp 8081:8081 insure_predict

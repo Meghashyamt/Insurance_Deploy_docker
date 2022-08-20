@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+<!--<img src ="https://www.linkpicture.com/q/dataset-card_1.png" align="left" />-->
+ <frameset cols = "30%"> 
+ <frame name = "top" src = "https://www.linkpicture.com/q/dataset-card.png" /></frameset>
+ <!--<iframe src = "https://www.linkpicture.com/q/dataset-card.png" width = "600" height = "350" frameBorder="0" scrolling="no">
+         Sorry your browser does not support inline frames.
+      </iframe>-->
+ <div class="login"><br><br>
+	<h1 style="color:Tomato";>Predictive Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	
+   
+   <!--<img src ="https://www.linkpicture.com/q/dataset-card.png" align="left" />-->
+    	<input type="text" name="Gender"  placeholder="Gender" required="required" />
+
+       <input type="text" name="Age"  placeholder="Age" required="required" />
+       
+       <input type="text" name="Driving_License"  placeholder="Driving_License" required="required" />
+
+     
+       <input type="text" name="Previouly_Insured"  placeholder="Previouly_Insured" required="required" />
+       
+       <input type="text" name="Vehicle_Age"  placeholder="Vehicle_Age" required="required" />
+
+        <input type="text" name="Vehicle_Damage"  placeholder="Vehicle_Damage" required="required" />
+
+      
+       
+       <input type="text" name="Policy_Sales_Channel"  placeholder="Policy_Sales_Channel" required="required" />
+      <input type="text" name="Vintage"  placeholder="Vintage" required="required" />
+       
+     
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+<div class="footer">
+  <p>MS</p>
+</div>
+
+</body>
+</html>
